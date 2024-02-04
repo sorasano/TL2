@@ -8,7 +8,11 @@ class TextureConverter
 public:
 
 	//テクスチャをwicからdds変換
-	void ConvertTextureWICToDDS(const std::string& filePath);
+	void ConvertTextureWICToDDS(const std::string& filePath
+	,int numOptions,char* options[] = nullptr);
+
+	//使用方法を出力
+	static void OutputUsage();
 
 private:
 
@@ -22,7 +26,7 @@ private:
 	void SeparateFilePath(const std::wstring& filePath);
 
 	//ddsテクスチャとしてファイル書き出し
-	void SaveDDSTextureToFile();
+	void SaveDDSTextureToFile(int numOptions, char* options[]);
 
 private:
 
